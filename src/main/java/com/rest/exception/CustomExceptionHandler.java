@@ -58,6 +58,7 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
         return switch (code) {
             case 403 -> HttpStatus.FORBIDDEN;
             case 401 -> HttpStatus.UNAUTHORIZED;
+            case 429 -> HttpStatus.TOO_MANY_REQUESTS;
             default -> HttpStatus.NOT_IMPLEMENTED;
         };
     }
